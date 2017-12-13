@@ -21,6 +21,15 @@ if ($hour >= 0 && $hour < 6) {
 } else {
     $welcome = "Good Night";
 }
+
+// Инициализация массива
+$leftMenu = [
+                    ['link' => "Домой", 'href' => 'index.php'],
+                    ['link' => "О нас", 'href' => 'about.php'],
+                    ['link' => "Контакты", 'href' => 'contact.php'],
+                    ['link' => "Таблица умножения", 'href' => 'table.php'],
+                    ['link' => "Калькулятор", 'href' => 'calc.php']
+            ];
 ?>
 
 <!DOCTYPE html>
@@ -68,21 +77,10 @@ if ($hour >= 0 && $hour < 6) {
             <h2>Навигация по сайту</h2>
             <!-- Меню -->
             <?php
-            $leftMenu = [
-                ['link' => "Домой", 'href' => 'index.php'],
-               ['link' => "О нас", 'href' => 'about.php'],
-                ['link' => "Контакты", 'href' => 'contact.php'],
-                ['link' => "Таблица умножения", 'href' => 'table.php'],
-                ['link' => "Калькулятор", 'href' => 'calc.php']
-                ];
+            foreach($leftMenu as $menu){
+           echo "<div><a href='$menu[href]'>$menu[link]</a></div>";
+            }
             ?>
-            <ul>
-                <li><a href='<?php echo $leftMenu[0]['href'] ?>'><?php echo $leftMenu[0]['link'] ?></a></li>
-                <li><a href='<?php echo $leftMenu[1]['href'] ?>'><?php echo $leftMenu[1]['link'] ?></a></li>
-                <li><a href='<?php echo $leftMenu[2]['href'] ?>'><?php echo $leftMenu[2]['link'] ?></a></li>
-                <li><a href='<?php echo $leftMenu[3]['href'] ?>'><?php echo $leftMenu[3]['link'] ?></a></li>
-                <li><a href='<?php echo $leftMenu[4]['href'] ?>'><?php echo $leftMenu[4]['link'] ?></a></li>
-            </ul>
             <!-- Меню -->
             <!-- Навигация -->
         </div>
