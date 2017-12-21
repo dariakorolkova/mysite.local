@@ -44,6 +44,10 @@ body {
   padding-left: 0;
 }
 
+#nav ul.horizontal li {
+    display: inline-block;
+}
+
 #nav li {
   font-size: 90%;
   border-bottom: 1px dotted #B2BCC6;

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <?php
-    $cols = 10;
-    $rows = 10;
-    ?>
     <head>
         <title>Таблица умножения</title>
         <meta charset="utf-8" />
@@ -11,7 +7,9 @@
     </head>
 
     <body>
-
+       <?php
+include 'inc/lib.inc.php';
+?>
         <div id="header">
             <!-- Верхняя часть страницы -->
             <img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
@@ -43,18 +41,7 @@
             <!-- Таблица -->
             <table border='1' width="200">
                 <?php
-                for ($rows = 1; $rows <= 10; $rows++) {
-                    echo '<tr>';
-                    for ($cols = 1; $cols <= 10; $cols++) {
-                        if ($cols == 1 || $rows == 1) {
-                            echo "<td bgcolor = #32CD32><b><div align = center>" . $cols * $rows . "</div></b></td>";
-                        } elseif ($cols % 2 == 0) {
-                            echo "<td bgcolor = #F8F8FF><div align = center>" . $cols * $rows . "</div></td>";
-                        } else {
-                            echo "<td bgcolor = #F8F8FF><div align = center>" . $cols * $rows . "</div></td>";
-                        }
-                    }
-                }
+                drawtable();
                 ?>
             </table>
             <!-- Таблица -->
